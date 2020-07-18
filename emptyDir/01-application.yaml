@@ -4,17 +4,17 @@ metadata:
   name: openresty
   namespace: volumes-sample
   labels:
-    app: openresty-srv
+    app: openresty
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: openresty-srv
+      app: openresty
   template:
     metadata:
       labels:
-        app: openresty-srv
+        app: openresty
     spec:
       containers:
       - name: openresty
