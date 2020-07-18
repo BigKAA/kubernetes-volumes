@@ -67,4 +67,5 @@ spec:
             mountPath: /empty
       volumes:
         - name: empty-volume
-          emptyDir: {}
+          emptyDir:
+            medium: "Memory"
