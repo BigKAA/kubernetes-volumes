@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: openresty
+  namespace: volumes-sample
+  labels:
+    app: openresty
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: openresty
+  template:
+    metadata:
+      labels:
+        app: openresty
+    spec:
+      containers:
+      - name: openresty
+        image: openresty/openresty
+        env:
+        - name: NGINX_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+#        livenessProbe:
+#          httpGet:
+#            path: /
+#            port: 80
+#            scheme: HTTP
+#          initialDelaySeconds: 10
+#          periodSeconds: 20
+#          timeoutSeconds: 1
+#          successThreshold: 1
+#          failureThreshold: 3
+#        readinessProbe:
+#          httpGet:
+#            path: /
+#            port: 80
+#            scheme: HTTP
+#          initialDelaySeconds: 10
+#          periodSeconds: 20
+#          timeoutSeconds: 1
+#          successThreshold: 1
+#          failureThreshold: 3
+#        startupProbe:
+#          httpGet:
+#            path: /
+#            port: 80
+#          failureThreshold: 30
+#          periodSeconds: 10
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        volumeMounts:
+          - name: empty-volume
+            mountPath: /empty
+      volumes:
+        - name: empty-volume
+          emptyDir: {}
+  serviceName:
