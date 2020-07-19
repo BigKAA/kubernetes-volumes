@@ -41,4 +41,4 @@ spec:
           - backend:
               serviceName: openresty-srv
               servicePort: 80
-            path: /volumes
+            path: /volumes/
