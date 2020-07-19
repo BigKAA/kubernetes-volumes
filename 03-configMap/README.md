@@ -26,3 +26,7 @@
 #### Применение configMap
     
 `kubectl -n volumes-sample apply -f 00-index-html.yml`
+
+#### Подклычение к pod
+
+`kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`
