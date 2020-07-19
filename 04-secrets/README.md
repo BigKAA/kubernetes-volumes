@@ -12,4 +12,7 @@
 - По кубеле при вытягивании картинок для стручка
 
 #### Создание secret из файла 
- `kubectl create secret generic my-secret --from-file=user.txt --dry-run=client`
+ `kubectl -n volumes-sample create secret generic my-secret --from-file=user=user.txt --from-file=password=password.txt`
+ 
+#### Подключение к pod
+`kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`

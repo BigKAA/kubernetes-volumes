@@ -1,7 +1,7 @@
 .idea
 03-configMap/00-index-html.yaml
-04-secrets/*.txt
-04-secrets/00-secret.yaml
+
+
 
 
 

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openresty
+  namespace: volumes-sample
+  labels:
+    app: openresty
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: openresty
+  template:
+    metadata:
+      labels:
+        app: openresty
+    spec:
+      containers:
+        - name: openresty
+          image: openresty/openresty:centos-rpm
+          env:
+            - name: NGINX_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+#            - name: ENV_USER
+#              valueFrom:
+#                secretKeyRef:
+#                  name: user-password-secret
+#                  key: user
+          envFrom:
+            - secretRef:
+                name: user-password-secret
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
