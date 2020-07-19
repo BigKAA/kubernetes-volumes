@@ -10,3 +10,6 @@
 его контейнерах.
 - В качестве переменной среды окружения контейнера.
 - По кубеле при вытягивании картинок для стручка
+
+#### Создание secret из файла 
+ `kubectl create secret generic my-secret --from-file=user.txt --dry-run=client`
