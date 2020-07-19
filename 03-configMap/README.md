@@ -12,8 +12,14 @@
 Необходимо сначала создать объект configMap, прежде чем вы 
 начнёте его использовать.
 
-Создание configMap из файла index.html:
+#### Создание configMap из файла index.html:
 
-`
-kubectl create configmap index-html --from-file=index.html --dry-run -o yaml > 00-index-html.yml
-`
+`kubectl create configmap index-html --from-file=index.html --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yml`
+
+#### Создание configMap, включая в него все файлы в текущей директории:
+
+`kubectl create configmap index-html --from-file=./ --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yml`
+
+#### Применение configMap
+    
+`kubectl -n volumes-sample apply -f 00-index-html.yml`
