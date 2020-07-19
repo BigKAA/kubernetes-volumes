@@ -11,3 +11,9 @@
 
 Необходимо сначала создать объект configMap, прежде чем вы 
 начнёте его использовать.
+
+Создание configMap из файла index.html:
+
+`
+kubectl create configmap index-html --from-file=index.html --dry-run -o yaml > 00-index-html.yml
+`
