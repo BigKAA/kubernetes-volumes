@@ -34,7 +34,7 @@ spec:
       volumes:
         - name: logs-volume
           hostPath:
-            path: /var/log/logs
-            type: Directory
-            # path: /var/log
+            # path: /var/log/logs
             # type: Directory
+            path: /var/log
+            type: Directory
