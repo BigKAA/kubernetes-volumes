@@ -68,3 +68,5 @@ spec:
                   items:
                     - key: example.txt
                       path: configs/example.txt
+                    - key: config.yaml
+                      path: configs/config.yaml
