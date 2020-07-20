@@ -41,7 +41,7 @@ spec:
             mountPath: /empty
       - name: centos
         image: centos:centos8
-        command: ['/bin/bash']
+        command: ['/bin/bash', '-c', '$SHELL']
         volumeMounts:
           - name: empty-volume
             mountPath: /empty
