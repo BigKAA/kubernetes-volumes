@@ -36,18 +36,18 @@ spec:
               name: http
               protocol: TCP
           volumeMounts:
-            - mountPath: "/etc/pod_info"
-              name: pod_info
+            - mountPath: "/etc/pod-info"
+              name: pod-info
               readOnly: true
       volumes:
-        - name: pod_info
+        - name: pod-info
           downwardAPI:
             items:
-              - path: limit_cpu
+              - path: limit-cpu
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.cpu
-              - path: limit_memory
+              - path: limit-memory
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.memory
