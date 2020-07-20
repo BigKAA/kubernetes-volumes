@@ -47,12 +47,10 @@ spec:
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.cpu
-                  divisor: 1Mi
               - path: limit_memory
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.memory
-                  divisor: 1Mi
               - path: labels
                 fieldRef:
                   fieldPath: metadata.labels
