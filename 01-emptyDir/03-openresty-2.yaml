@@ -39,6 +39,16 @@ spec:
         volumeMounts:
           - name: empty-volume
             mountPath: /empty
+      - name: centos
+        image: centos:centos8
+        volumeMounts:
+          - name: empty-volume
+            mountPath: /empty
+        env:
+          - name: ENV_HOST
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
       volumes:
         - name: empty-volume
           emptyDir:
