@@ -6,3 +6,5 @@
 - hostPath
 - configMap
 - secrets
+- downwardAPI
+- projected
