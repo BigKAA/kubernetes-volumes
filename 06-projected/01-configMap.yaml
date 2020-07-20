@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example-txt
+data:
+  example.txt: |-
+    Пример configMap для видео
+    на моём канале.
