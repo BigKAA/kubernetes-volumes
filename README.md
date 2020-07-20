@@ -1,5 +1,8 @@
 # Volumes
 
-Материалы для видео, посвящённых volumes
+Материалы для видео
 
-- secrets 
+- emptyDir
+- hostPath
+- configMap
+- secrets
