@@ -63,7 +63,7 @@ spec:
             cpu: "0.2"
             memory: "300Mi"
           requests:
-            cpu: "0.2"
+            cpu: "0.1"
             memory: "100Mi"
       volumes:
         - name: empty-volume
