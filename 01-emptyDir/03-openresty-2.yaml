@@ -42,7 +42,7 @@ spec:
       - name: centos
         image: centos:centos8
         command: ['bash']
-        args: ['-c','sleep','50000']
+        args: ['-c','sleep 50000']
         volumeMounts:
           - name: empty-volume
             mountPath: /empty
