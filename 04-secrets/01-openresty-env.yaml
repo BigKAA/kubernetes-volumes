@@ -32,6 +32,13 @@ spec:
           envFrom:
             - secretRef:
                 name: user-password-secret
+          resources:
+            limits:
+              cpu: "0.2"
+              memory: "300Mi"
+            requests:
+              cpu: "0.1"
+              memory: "100Mi"
           ports:
             - containerPort: 80
               name: http

@@ -50,6 +50,13 @@ spec:
 #            port: 80
 #          failureThreshold: 30
 #          periodSeconds: 10
+        resources:
+          limits:
+            cpu: "0.2"
+            memory: "300Mi"
+          requests:
+            cpu: "0.1"
+            memory: "100Mi"
         ports:
         - containerPort: 80
           name: http
