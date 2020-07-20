@@ -11,7 +11,10 @@
 - В качестве переменной среды окружения контейнера.
 
 #### Создание secret из файла 
- `kubectl -n volumes-sample create secret generic my-secret --from-file=user=user.txt --from-file=password=password.txt`
+`kubectl -n volumes-sample create secret generic my-secret --from-file=user=user.txt --from-file=password=password.txt`
+
+#### Создание secret из файла 
+`kubectl -n volumes-sample create secret generic my-secret --from-file=user=user_admin --from-file=password=mypassword`
  
 #### Подключение к pod
 `kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`
