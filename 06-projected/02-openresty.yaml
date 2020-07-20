@@ -57,7 +57,7 @@ spec:
                       fieldRef:
                         fieldPath: metadata.labels
               - secret:
-                  name: user-password-secretname
+                  name: user-password-secret
                   items:
                     - key: user
                       path: secret/user
