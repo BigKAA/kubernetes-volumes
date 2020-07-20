@@ -12,5 +12,7 @@
 зачете выделяемой памяти для пода. И при привышения лимита приходит
 OOM Killer.
 
-#### Подключение к pod
-`kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`
+#### Подключение к определённому контейнеру в pod
+    
+    kubectl -n volumes-sample exec openresty-566b47789b-kd9qc -i -t -c centos -- bash
+    kubectl -n volumes-sample exec openresty-566b47789b-kd9qc -i -t -c openresty -- bash
