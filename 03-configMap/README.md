@@ -24,10 +24,6 @@
 
     kubectl create configmap index-html --from-file=./ --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yaml
 
-#### Применение configMap
-    
-    kubectl -n volumes-sample apply -f 00-index-html.yml
-
 #### Подключение к pod
 
     kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash
