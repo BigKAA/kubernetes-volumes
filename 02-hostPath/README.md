@@ -29,3 +29,6 @@
 Удалит метку с node
 
 `kubectl label nodes node3.kryukov.local directory-`
+
+## Видео
+https://youtu.be/FiAMIDYQmt0

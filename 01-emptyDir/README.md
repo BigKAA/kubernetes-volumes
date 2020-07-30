@@ -16,3 +16,6 @@ OOM Killer.
     
     kubectl -n volumes-sample exec openresty-566b47789b-kd9qc -i -t -c centos -- bash
     kubectl -n volumes-sample exec openresty-566b47789b-kd9qc -i -t -c openresty -- bash
+
+## Видео
+https://youtu.be/dscyyCuWRHA

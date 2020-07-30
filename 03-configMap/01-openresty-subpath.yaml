@@ -37,16 +37,9 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: index-html
-              mountPath: /usr/local/openresty/nginx/html/
-              # mountPath: /usr/local/openresty/nginx/html/index.html
-              # subPath: index.html
-#            - name: openresty-config
-#              mountPath: /usr/local/openresty/nginx/conf/nginx.conf
-#              subPath: nginx.conf
+              mountPath: /usr/local/openresty/nginx/html/index.html
+              subPath: index.html
       volumes:
         - name: index-html
           configMap:
             name: index-html
-#        - name: openresty-config
-#          configMap:
-#            name: openresty-config
