@@ -45,14 +45,16 @@ spec:
             sources:
               - downwardAPI:
                   items:
-                    - path: limits/cpu
+                    - path: limits/cpu-millicore
                       resourceFieldRef:
                         containerName: openresty
                         resource: limits.cpu
-                    - path: limits/memory
+                        divisor: 1m
+                    - path: limits/memory-kibibytes
                       resourceFieldRef:
                         containerName: openresty
                         resource: limits.memory
+                        divisor: 1Ki
                     - path: labels
                       fieldRef:
                         fieldPath: metadata.labels

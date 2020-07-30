@@ -43,14 +43,16 @@ spec:
         - name: pod-info
           downwardAPI:
             items:
-              - path: limit-cpu
+              - path: limit-cpu-millicores
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.cpu
-              - path: limit-memory
+                  divisor: 1m
+              - path: limit-memory-kibibytes
                 resourceFieldRef:
                   containerName: openresty
                   resource: limits.memory
+                  divisor: 1Ki
               - path: labels
                 fieldRef:
                   fieldPath: metadata.labels
