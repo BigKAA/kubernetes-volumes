@@ -18,16 +18,16 @@
 
 #### Создание configMap из файла index.html:
 
-`kubectl create configmap index-html --from-file=index.html --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yaml`
+    kubectl create configmap index-html --from-file=index.html --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yaml
 
 #### Создание configMap, включая в него все файлы в текущей директории:
 
-`kubectl create configmap index-html --from-file=./ --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yaml`
+    kubectl create configmap index-html --from-file=./ --dry-run=client -o yaml | sed '/creationTimestamp/d' > 00-index-html.yaml
 
 #### Применение configMap
     
-`kubectl -n volumes-sample apply -f 00-index-html.yml`
+    kubectl -n volumes-sample apply -f 00-index-html.yml
 
 #### Подключение к pod
 
-`kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`
+    kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash

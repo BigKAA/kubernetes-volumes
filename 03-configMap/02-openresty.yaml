@@ -24,9 +24,6 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.name
-          envFrom:
-            - configMapRef:
-                name: env-config
           resources:
             limits:
               cpu: "0.2"
@@ -41,8 +38,6 @@ spec:
           volumeMounts:
             - name: index-html
               mountPath: /usr/local/openresty/nginx/html/
-              # mountPath: /usr/local/openresty/nginx/html/index.html
-              # subPath: index.html
 #            - name: openresty-config
 #              mountPath: /usr/local/openresty/nginx/conf/nginx.conf
 #              subPath: nginx.conf
