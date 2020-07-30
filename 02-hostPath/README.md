@@ -21,3 +21,11 @@
 владельца, что и Kubelet.
 - **File** - Файл должен существовать. 
 
+## Метки на node
+Поставить label на node.
+
+`kubectl label nodes node3.kryukov.local directory=centos`
+
+Удалит метку с node
+
+`kubectl label nodes node3.kryukov.local directory-`
