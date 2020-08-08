@@ -1,7 +1,8 @@
 # secret
 
-Секрет - это объект, который содержит небольшое количество
-конфиденциальных данных, таких как пароль, токен или ключ.
+Секрет - это объект, который содержащий
+конфиденциальные данные, такие как пароль, токен 
+или объекты ssl.
 
 Чтобы использовать секрет, pod должен ссылаться на секрет.
 Секрет может быть использован:
@@ -20,4 +21,8 @@
 
 ## Подключение к pod
 
-`kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash`
+    kubectl -n volumes-sample exec openresty-7cd79cfd94-5zjgl -i -t -- bash
+
+## Secret для доступа к хранилищу docker images 
+    imagePullSecrets:
+      - name: registrykey
