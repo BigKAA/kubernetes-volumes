@@ -27,11 +27,11 @@ spec:
 #            - name: ENV_USER
 #              valueFrom:
 #                secretKeyRef:
-#                  name: user-password-secret
+#                  name: my-secret
 #                  key: user
           envFrom:
             - secretRef:
-                name: user-password-secret
+                name: my-secret
           resources:
             limits:
               cpu: "0.2"
